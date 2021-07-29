@@ -6,11 +6,10 @@
  * started at 26/10/2018
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function() {
-
-    // your code here
-
+    document.getElementById("target").innerHTML = "Owned";
 })();
+// notes: textContents is all text contained by an element and all its children that are for formatting purposes only.
+// innerText returns all text contained by an element and all its child elements.
+// innerHtml returns all text, including html tags, that is contained by an element.
+// https://www.microfocus.com/documentation/silk-test/200/en/silktestworkbench-help-en/SILKTEST-21EEFF3F-DIFFERENCEBETWEENTEXTCONTENTSINNERTEXTINNERHTML-REF.html

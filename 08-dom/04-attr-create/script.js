@@ -6,11 +6,12 @@
  * started at 26/10/2018
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function() {
-
-    // your code here
-
+    const source = document.getElementById("source");
+    const imageURL = source.getAttribute("data-image");
+    const target = document.getElementById("target");
+    const imgTag = document.createElement("img");
+    imgTag.setAttribute("src", imageURL)
+    target.appendChild(imgTag);
+    source.remove();
 })();

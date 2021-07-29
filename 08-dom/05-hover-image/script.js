@@ -6,11 +6,10 @@
  * started at 26/10/2018
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function() {
-
-    // your code here
-
+    const img = document.querySelector("img");
+    const linkOnHover = img.getAttribute("data-hover");
+    const defaultLink = img.getAttribute("src");
+    img.addEventListener("mouseover", () => img.setAttribute("src", linkOnHover))
+    img.addEventListener("mouseout", () => img.setAttribute("src", defaultLink))
 })();
