@@ -14,14 +14,13 @@
         "../../_shared/img/lemon.svg",
         "../../_shared/img/map.svg",
     ];
-    
-        const img = document.querySelector("img");
-        const imgSource = img.getAttribute("src");
-        console.log(imgSource);
-        let i = 1;
-        document.getElementById("next").addEventListener("click", () => {
-            img.setAttribute("src", gallery[i]);
-            i++;
-            if (i == gallery.length) {i = 0}
-        })
+    const img = document.querySelector("img");
+    const imgSource = img.getAttribute("src");
+    console.log(imgSource);
+    let i = 1;
+    document.getElementById("next").addEventListener("click", () => {
+        img.setAttribute("src", gallery[i]);
+        i++;
+        if (i == gallery.length) {i = 0}
+    })
 })();

@@ -6,11 +6,21 @@
  * started at 26/10/2018
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function() {
-
-    // your code here
-
+    let i = 0;
+    let textElement = document.getElementById("target");
+    let textLetters = textElement.innerText;
+    textElement.innerHTML = "";
+    const typeWriter = () => {
+        const randomDelay = Math.floor(Math.random() * (200 - 50 + 1) + 50);
+        if (i<textLetters.length) {
+            setTimeout(() => {
+                textElement.innerHTML += textLetters.charAt(i);
+                console.log("test" + i);
+                i++;
+                typeWriter();
+            }, randomDelay)
+        }
+    }
+    typeWriter();
 })();

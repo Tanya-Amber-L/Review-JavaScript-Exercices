@@ -6,11 +6,18 @@
  * started at 26/10/2018
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function() {
-
-    // your code here
-
+    const target = document.getElementById("target");
+    const newTable = document.createElement("table");
+    target.appendChild(newTable); 
+    
+    for (i = 1; i < 11; i++) {
+        const newRow = document.createElement("tr");
+        newTable.appendChild(newRow);
+        for (j = 1; j < 11; j++) {
+            const newColumn = document.createElement("td");
+            newColumn.innerHTML = i*j;
+            newRow.appendChild(newColumn);
+        }
+    }
 })();

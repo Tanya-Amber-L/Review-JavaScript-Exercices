@@ -10,7 +10,14 @@
 // You will have time to focus on it later.
 
 (function() {
-
-    // your code here
-
+    const text = document.getElementById("target");
+    let letters = text.innerHTML.split("");
+    text.innerHTML = "";
+    const fontSizes = [18, 22, 26, 30, 34, 30, 26, 22];
+    letters.forEach( (letter, i) => {
+        const span = document.createElement("span");
+        span.innerHTML = letter;
+        span.style.fontSize = `${fontSizes[i % fontSizes.length]}px`;
+        text.appendChild(span);
+    })
 })();
