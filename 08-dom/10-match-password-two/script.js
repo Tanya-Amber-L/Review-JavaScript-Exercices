@@ -6,11 +6,16 @@
  * started at 26/10/2018
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function() {
-
-    // your code here
-
+    const pwdOne = document.getElementById("pass-one");
+    const pwdTwo = document.getElementById("pass-two");
+    document.getElementById("run").addEventListener("click", () => {
+        if (pwdOne.value === pwdTwo.value) {
+            pwdOne.style.border = "1px solid green";
+            pwdTwo.style.border = "1px solid green";
+        } else {
+            pwdOne.classList.add("error")
+            pwdTwo.classList.add("error");
+        }
+    })
 })();

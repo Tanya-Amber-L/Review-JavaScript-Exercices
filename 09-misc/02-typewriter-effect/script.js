@@ -16,7 +16,6 @@
         if (i<textLetters.length) {
             setTimeout(() => {
                 textElement.innerHTML += textLetters.charAt(i);
-                console.log("test" + i);
                 i++;
                 typeWriter();
             }, randomDelay)

@@ -6,9 +6,10 @@
  * started at 09/05/2019
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (() => {
-     
+    document.getElementById("run").addEventListener("click", () => {
+        window.lib.getPersons()
+        .then((people) => console.log(people))
+        .catch((error) => console.log(error))
+    })
 })();

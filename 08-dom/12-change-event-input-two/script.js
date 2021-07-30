@@ -6,11 +6,17 @@
  * started at 26/10/2018
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function() {
+    let pwd = document.getElementById("pass-one");
+    let validation = document.getElementById("validity");
 
-    // your code here
-
+    pwd.addEventListener("input", function() {
+        let pwdLength = pwd.value.length;
+        let numbers = pwd.value.replace(/[^0-9]/g,"").length;
+        if (pwdLength >= 8 && numbers >= 2) {
+            validation.innerHTML = "Ok !";
+        } else {
+            validation.innerHTML = "Not ok";
+        }
+    })
 })();

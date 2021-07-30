@@ -6,11 +6,14 @@
  * started at 26/10/2018
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function() {
-
-    // your code here
-
+    const input = document.getElementById("pass-one");
+    const letterCounter = document.getElementById("counter");
+    input.addEventListener("input", () => {
+        if (input.value.length <= 10) {
+            letterCounter.innerHTML = `${input.value.length}/10`;
+        } else {
+            input.value = input.value.slice(0, 10);
+        }
+    })
 })();
