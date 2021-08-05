@@ -10,15 +10,17 @@
     document.getElementById("run").addEventListener("click", async() => {
         try {
             const posts = await window.lib.getPosts();
-            posts.forEach(post => post.comment = promiseComments());
+            posts.forEach( async(post) => {
+                post.comment = await promiseComments(post.id)
+            });
             console.log(posts)
         }
         catch {(error) => {console.error(error)}}
     })
-    let promiseComments = async() => {
+    let promiseComments = async(postId) => {
         try {
-            const comments = window.lib.getComments();
-            return comments.value;
+            const comments = await window.lib.getComments(postId);
+            return comments;
         }
         catch {(error) => {console.error(error)}}
     }

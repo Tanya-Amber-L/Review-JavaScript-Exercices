@@ -10,11 +10,13 @@
     const pwdOne = document.getElementById("pass-one");
     const pwdTwo = document.getElementById("pass-two");
     document.getElementById("run").addEventListener("click", () => {
+        pwdOne.classList.remove("error")
+        pwdTwo.classList.remove("error");
         if (pwdOne.value === pwdTwo.value) {
             pwdOne.style.border = "1px solid green";
             pwdTwo.style.border = "1px solid green";
         } else {
-            pwdOne.classList.add("error")
+            pwdOne.classList.add("error");
             pwdTwo.classList.add("error");
         }
     })
