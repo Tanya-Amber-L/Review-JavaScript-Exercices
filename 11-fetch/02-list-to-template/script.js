@@ -6,10 +6,25 @@
  * started at 12/05/2019
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (() => {
-     
+    const target = document.getElementById("target");
+    const template = document.getElementById("tpl-hero");
+
+    document.getElementById("run").addEventListener("click", () => {
+        fetch("http://localhost:3000/heroes")
+
+        .then((resp) => resp.json())
+        .then((dataHeroes) => {
+            dataHeroes.forEach(hero => {
+                let clone = template.cloneNode(true).content; 
+                clone.querySelector(".name").innerHTML = hero.name;
+                clone.querySelector(".alter-ego").innerHTML = hero.alterEgo;
+                clone.querySelector(".powers").innerHTML = hero.abilities.join(", ");
+                target.appendChild(clone)
+            });
+        })
+
+        .catch((err) => console.error(err))
+    })
 })();
 

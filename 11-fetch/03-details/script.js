@@ -6,9 +6,26 @@
  * started at 12/05/2019
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
-
 (() => {
+    const target = document.getElementById("target");
+    const template = document.getElementById("tpl-hero");
+
+    document.getElementById("run").addEventListener("click", () => {
+        const heroId = document.getElementById("hero-id").value;
+    
+        fetch(`http://localhost:3000/heroes/${heroId}`)
+        .then((resp) => resp.json())
+        .then((hero) => {
+            if (hero.id === undefined) {
+                console.log("Unknown hero")
+            } else {
+                let clone = template.cloneNode(true).content; 
+                clone.querySelector(".name").innerHTML = hero.name;
+                clone.querySelector(".alter-ego").innerHTML = hero.alterEgo;
+                clone.querySelector(".powers").innerHTML = hero.abilities.join(", ");
+                target.appendChild(clone)
+            }
+        })
+        .catch((err) => console.error(err))
+    })
 })();

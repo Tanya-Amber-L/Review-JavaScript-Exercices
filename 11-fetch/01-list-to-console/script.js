@@ -6,9 +6,12 @@
  * started at 12/05/2019
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (() => {
-    
+    document.getElementById("run").addEventListener("click", () => {
+        fetch("http://localhost:3000/heroes")
+        .then((resp) => resp.json())
+        .then((dataHeroes) => {console.table(dataHeroes)})
+        
+        .catch((err) => console.error(err))
+    })
 })();

@@ -6,10 +6,21 @@
  * started at 12/05/2019
  */
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 const input = document.querySelector("#hero-id");
 
 (() => {
+    document.getElementById("run").addEventListener("click", async() => {
+        if (input.value === "") {
+            console.error("input empty");
+            return; 
+        }
+        
+        await fetch(`http://localhost:3000/heroes/${input.value}`, {
+            method: 'DELETE'
+        })
+
+        let heroesAfterDelete = await fetch("http://localhost:3000/heroes")
+        .then(resp => resp.json())
+        console.table(heroesAfterDelete)
+    })
 })();
