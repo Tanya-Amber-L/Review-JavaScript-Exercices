@@ -10,12 +10,12 @@
     document.getElementById("run").addEventListener("click", () => {
         window.lib.getPosts()
         .then((posts) => {
-            console.log(posts);
             posts.forEach(post => {
                 window.lib.getComments()
                 .then((comments) => post.comment = comments)
                 .catch((error) => console.error(error)) 
             });
+            console.log(posts);
         })
         .catch((error) => console.log(error))
     })

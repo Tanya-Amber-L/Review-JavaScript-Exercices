@@ -23,7 +23,10 @@
                 clone.querySelector(".name").innerHTML = hero.name;
                 clone.querySelector(".alter-ego").innerHTML = hero.alterEgo;
                 clone.querySelector(".powers").innerHTML = hero.abilities.join(", ");
-                target.appendChild(clone)
+                target.firstElementChild
+                    ? target.replaceChild(clone, target.firstElementChild)
+                    :target.appendChild(clone)
+
             }
         })
         .catch((err) => console.error(err))

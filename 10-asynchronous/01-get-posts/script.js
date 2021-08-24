@@ -11,9 +11,9 @@
         window.lib.getPosts((error, posts) => {
             if (error) {
                 console.log(error);
-            } else {
-                console.log(posts);
+                return
             }
+            console.log(posts);
         })
     })
 })();

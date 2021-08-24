@@ -8,22 +8,22 @@
 
 (() => {
     document.getElementById("run").addEventListener("click", () => {
-        let i = 0;
         window.lib.getPosts((error, posts) => {
             if (error) {
                 console.log(error);
-            } else {
-                console.log(posts)
-                posts.forEach(post => {
-                    window.lib.getComments( post.id, (error, comments) => {
-                        if (error) {
-                            console.log(error)
-                        } else {
-                            post.comments = comments
-                        }
-                    })
+                return
+            } 
+            posts.forEach(post => {
+                window.lib.getComments( post.id, (error, comments) => {
+                    if (error) {
+                        console.log(error)
+                        return
+                    }
+                    post.comments = comments
+                    console.log(posts)
+                    
                 })
-            }
+            })
         })
     })
 })();

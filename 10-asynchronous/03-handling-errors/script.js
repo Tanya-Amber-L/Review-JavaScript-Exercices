@@ -11,9 +11,9 @@
         window.lib.getPersons((error, people) => {
             if (error) {
                 console.error(error);
-            } else {
-                console.table(people)
+                return
             }
+            console.table(people)
         })
     })
 })();
